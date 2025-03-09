@@ -16,6 +16,7 @@ p {
 PC用のスタイル 
 =================*/
 @media screen and (min-width: 768px) {
+
   /* 横幅設定 */
   body {
     max-width: 1080px;
@@ -27,6 +28,7 @@ PC用のスタイル
   header {
     display: flex;
     justify-content: space-between;
+    padding: 0;
   }
 
   /* ナビゲーションのレイアウト */
@@ -34,12 +36,13 @@ PC用のスタイル
     text-align: right;
     font-size: 14px;
     padding-top: 15px;
+    margin-right: 0;
   }
 
   /* ナビゲーションのリンクの装飾設定 */
   #nav-pc>a {
     text-decoration: none;
-    margin-left: 20px;
+    margin-left: 10px;
   }
 
   #nav-pc>a:link {
@@ -59,34 +62,42 @@ PC用のスタイル
     color: #0d0d0d;
   }
 
-  /* SP用ナビゲーション非表示 */
+  #nav-sp {
+    display: none;
+  }
+
   #menu-sp {
     display: none;
   }
+
   #nav-sp {
     display: none;
   }
 }
 
+
 /*================
-SP用のスタイル 
+スマホ用のスタイル 
 =================*/
-@media only screen and (max-width: 767px) {
-  /* body要素のスタイル */
+@media screen and (max-width: 767px) {
   body {
     min-width: 375px;
-    margin: 0;
+    margin: 0
   }
-  /* PCのナビゲーションを非表示にする */
+
   #nav-pc {
     display: none;
   }
-  /* ハンバーガーメニューのスタイル */
+
+  /* ハンバーガーメニュー */
   #menu-sp {
+    display: block;
     float: right;
     padding: 0;
   }
-  /* スマホ用ナビゲーションのスタイル */
+
+
+  /* スマホ用ナビゲーション */
   #nav-sp {
     background-color: #ce933e;
     position: absolute;
@@ -96,56 +107,53 @@ SP用のスタイル
     width: 100%;
     display: none;
     z-index: 100;
-  }
+    }
+    #nav-sp ul {
+    padding-left: 0;
+    }
+    #nav-sp li {
+    list-style: none;
+    }
 
-  /* 閉じるボタンのスタイル */
   #close {
-      position: adsolute;
-      top: 20px;
-      right: 20px;
-    }
-
-    /* ナビゲーションメニュー用ロゴのスタイル */
-    #logo-sp {
-      margin: 80px 0 30px 20px;
-    }
-
-    /* ナビゲーションのリンクの装飾設定 */
-    #nav-sp > a {
-      display: block;
-    }
-  
-    #nav-sp > a:link {
-      color: #ffffff;
-    }
-    #nav-sp > a:visited {
-      color: #ffffff;
-    }
-    #nav-sp > a:hover {
-      color: #ffffff;
-      text-decoration: underline;
-    }
-    #nav-sp > a:active {
-      color: #ffffff;
-    }
-    #nav-sp > .menu {
-      text-decoration: none;
-      display: block;
-      margin: 0 20px 0 20px;
-      height: 44px;
-      font-size: 16px;
-      background-image: url("images/arrow.png");
-      background-repeat: no-repeat;
-      background-position: right top;
-    }
+    position: absolute;
+    top: 20px;
+    right: 20px;
   }
 
-/* PCの画面幅の場合にSPのナビゲーションを非表示にする */
-@media only screen and (min-width: 768px) {
-  #menu-sp {
-    display: none;
+  #logo-sp {
+    margin: 80px 0 30px 20px;
   }
-  #nav-sp {
-    display: none;
+
+  #nav-sp>a {
+    display: block;
+  }
+
+  #nav-sp>a:link {
+    color: #ffffff;
+  }
+
+  #nav-sp>a:visited {
+    color: #ffffff;
+  }
+
+  #nav-sp>a:hover {
+    color: #ffffff;
+    text-decoration: underline;
+  }
+
+  #nav-sp>a:active {
+    color: #ffffff;
+  }
+
+  #nav-sp>.menu {
+    text-decoration: none;
+    display: block;
+    margin: auto 20px auto 20px;
+    height: 44px;
+    font-size: 16px;
+    background-image: url(images/arrow.png);
+    background-repeat: no-repeat;
+    background-position: right top;
   }
 }
